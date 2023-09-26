@@ -27,24 +27,35 @@ console.log(timeoutObject); // Timeout { ... }
 // output:
 function dynamicIntervalCount(cb, delay, amount) {
   return intervalObj = setInterval(() => {
-     cb();
+    cb();
     amount--;
-    if (amount === 0) {
-      clearInterval(intervalObj);
-    }
 
+    if (amount === 0) clearInterval(intervalObj);
   }, delay);
 }
+
+// function dynamicIntervalCount(cb, delay, amount) {
+//   if (amount === 0)
+//   return intervalObj = setInterval(() => {
+//     cb();
+//     amount--;
+//     if (amount === 0) {
+//       clearInterval(intervalObj);
+//     }
+
+//   }, delay);
+// }
+
 
 // dynamicIntervalCount(function() {
 //   console.log('hi');
 // }, 500, 3); // prints 'hi' at 500ms intervals a total of 3 times
 
-// const timeoutObject = dynamicIntervalCount(function() {
-//   console.log('hi');
-// }, 500); // prints 'hi' at 500ms intervals indefinitely
+const timeoutObject = dynamicIntervalCount(function() {
+  console.log('hi');
+}, 500); // prints 'hi' at 500ms intervals indefinitely
 
-// console.log(timeoutObject); // Timeout { ... }
+console.log(timeoutObject); // Timeout { ... }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

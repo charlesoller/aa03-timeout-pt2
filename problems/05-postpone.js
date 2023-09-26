@@ -23,11 +23,11 @@ slowerGoodbye(); // prints 'bye' after 1750 ms
 ***********************************************************************/
 //INPUTS: cb = callback, delay is in ms
 //OUTPUT: returns function, invokes cb after delay (referencing parent args)
-function postpone(cb, delay) {
-  return function(){
-    setTimeout(cb, delay)
-  }
-}
+const postpone = (cb, delay) => () => setTimeout(cb, delay);
+//   return function(){
+//     setTimeout(cb, delay)
+//   }
+// }
 
 // const sayHello = () => console.log('hi');
 // const slowHello = postpone(sayHello, 1000);
